@@ -1,0 +1,63 @@
+fun main() {
+    val Banker= Banker("Samuel",22)
+    Banker.talk("hello nice guy")
+    Banker.eat()
+    Banker.sleep()
+    Banker.countmoney(arrayOf(20,65,78,5,6,30))
+    val Doctor=Doctor("Bridgit" ,37)
+    Doctor.eat()
+    Doctor.talk("hello nice guy")
+    Doctor.sleep()
+    Doctor.treatpatient("Becky", "malaria")
+    val farmer=farmer("Julie",30)
+    farmer.talk("hello nice guy")
+    farmer.eat()
+    farmer.sleep()
+    farmer.cultivate()
+
+
+}
+
+open class person(var name:String, var age:Int){
+    fun talk(words: String) {
+        println(words)
+    }
+
+    fun eat() {
+        println("yum")
+
+    }
+
+    fun sleep() {
+        println("zzzzz")
+    }
+
+}
+
+class Banker(name:String,  age:Int) :person(name ,age ){
+
+
+    fun countmoney(notes: Array<Int>) :Int{
+        return  notes.sum()
+    }
+}
+
+class Doctor(name:String,  age:Int): person(name,age){
+
+
+
+    fun treatpatient(patient:String, disease:String){
+        println("treating  $patient for $disease")
+    }
+
+}
+
+class farmer(name:String,  age:Int): person(name,age){
+
+
+
+    fun cultivate(){
+        println("dig dig dig")
+    }
+}
+
